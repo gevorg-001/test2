@@ -15,7 +15,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Query("select (u) from Post u where u.user =?1")
     List<Post> getByIdPost(User user);
 
-    @Query("select (u) from Post u where u.header=?1 or u.type=?1% or u.phone=?1%")
+    @Query("select (u) from Post u where u.header=?1 or u.type=?1 or u.phone=?1")
     List<Post> searchAllBy (String word);
 
 }
