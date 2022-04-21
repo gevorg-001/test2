@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALLUSERS</title>
+</head>
+<body>
+
+<div align="center">
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>UserName</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Country</th>
+            <th>Email</th>
+            <th>Role</th>
+
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">User id</td>
+            <td th:text="${user.username}">Username</td>
+            <td th:text="${user.firstname}">Firstname</td>
+            <td th:text="${user.lastname}">Lastname</td>
+            <td th:text="${user.country}">Country</td>
+            <td th:text="${user.email}">Email</td>
+            <td th:text="${user.role}">Role</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form method="POST" th:action="@{/logout}">
+        <input type="submit" value="Logout"/>
+    </form>
+</div>
+</body>
+</html>
